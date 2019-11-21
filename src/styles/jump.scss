@@ -1,0 +1,29 @@
+/**
+  Jump animation - inspired by https://codepen.io/arlinadesign/pen/BxgRPb
+*/
+h1.jump span {
+  animation: bounce .5s ease infinite alternate;
+  text-shadow: 0 1px 0 #222, 0 2px 0 #222, 0 3px 0 #222, 0 4px 0 #222,
+    0 5px 0 #222, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent,
+    0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
+  position: relative;
+
+  @for $i from 1 through 50 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.1}s;
+    }
+  }
+}
+
+@keyframes bounce {
+  0% {
+    top: 20px;
+  }
+
+  100% {
+    top: -20px;
+    text-shadow: 0 1px 0 #222, 0 2px 0 #222, 0 3px 0 #222, 0 4px 0 #222,
+      0 5px 0 #222, 0 6px 0 #222, 0 7px 0 #222, 0 8px 0 #222, 0 9px 0 #222,
+      0 50px 25px rgba(0, 0, 0, 0.2);
+  }
+}
