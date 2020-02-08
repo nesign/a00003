@@ -3,13 +3,13 @@
   {{#if guest}}
   <section class="nunito guest py-4">
     <div class="guest-container d-flex justify-content-center text-muted text-small text-dark bg-none">
-      <span class="guest-name">{{guest.name}},</span>
+      <span class="guest-name" id="guestName">{{guest.name}},</span>
     </div>
   </section>
   {{/if}}
 
   <section class="main">
-    <div class="jumbotron bg-success shadow-lg">
+    <div class="jumbotron bg-success shadow-lg" id="titleJumbotron">
       <h1 class="display-1 jump text-center luckiestguy d-none">
         {{#each (eachch invite.shortMsg)}}
         <span>{{this}}</span>
@@ -21,7 +21,7 @@
         <span>m</span>
         <span>p</span>
       </h1>
-      <div class="pacifico lead text-center shiner">{{invite.title}}</div>
+      <div class="pacifico lead text-center shiner" id="title">{{invite.title}}</div>
     </div>
     {{#if mainPhoto}}
     <div class="card mb-3">
@@ -31,19 +31,7 @@
           allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       {{else}}
-      <img class="card-img-top" src="{{mainPhoto.url}}" alt="{{mainPhoto.title}}">
-      {{/if}}
-      {{#if mainPhoto.title}}
-      <div class="row no-gutters">
-        <div class="col-12">
-        </div>
-        <div class="col-12 d-flex align-items-end">
-          <div class="card-body comforta">
-            <h3 class="card-title">{{mainPhoto.title}}</h3>
-            <small class="card-text text-muted">{{mainPhoto.description}}</small>
-          </div>
-        </div>
-      </div>
+      <img class="card-img-top" src="{{mainPhoto.url}}" alt="{{mainPhoto.title}}" id="mainPhoto">
       {{/if}}
     </div>
     {{/if}}
@@ -52,7 +40,7 @@
   {{#if longMsg}}
   <section class="long-msg bg-info my-5 py-5 rounded shadow">
     <h4 class="pacifico text-white text-center py-4">{{invite.shortMsg}}</h4>
-    <div class="long-msg text-center chilanka">
+    <div class="long-msg text-center chilanka" id="longMsg">
       {{{longMsg}}}
     </div>
   </section>
@@ -60,13 +48,13 @@
 
   <section class="details py-5">
     <div class="row justify-content-between">
-      <div class="col">
-        <h4 class="text-info border-bottom border-success">Venue</h4>
-        <small class="text-dark">{{invite.addrText}}</small>
+      <div class="col" id="addrTextCard">
+        <h4 class="text-info border-bottom border-success" id="addrTextTitle">Venue</h4>
+        <small class="text-dark" id="addrText">{{invite.addrText}}</small>
       </div>
-      <div class="col text-right">
-        <h4 class="text-info border-bottom border-success">Time</h4>
-        <small class="text-dark">{{invite.timeFromString}} - {{endsat invite}}</small>
+      <div class="col text-right" id="timeCard">
+        <h4 class="text-info border-bottom border-success" id="timeTitle">Time</h4>
+        <small class="text-dark" id="time">{{invite.timeFromString}} - {{endsat invite}}</small>
       </div>
     </div>
   </section>
