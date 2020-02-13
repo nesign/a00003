@@ -1,5 +1,5 @@
 <head></head><!-- Custom template goes here -->
-<div class="container fade-in">
+<div class="container fade-in" id="inviteDesign">
   {{#if guest}}
   <section class="nunito guest py-4">
     <div class="guest-container d-flex justify-content-center text-muted text-small text-dark bg-none">
@@ -10,7 +10,7 @@
 
   <section class="main">
     <div class="jumbotron bg-success shadow-lg" id="titleJumbotron">
-      <h1 class="display-1 jump text-center luckiestguy d-none">
+      <h1 class="display-1 jump text-center luckiestguy d-none" id="shortMsg">
         {{#each (eachch invite.shortMsg)}}
         <span>{{this}}</span>
         {{/each}}
@@ -93,5 +93,5 @@
     </div>
   </section>
   {{/if}}
-
+  <div class="bg" id="inviteBackground"></div>
 </div>
